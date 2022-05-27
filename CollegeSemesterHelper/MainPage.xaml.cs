@@ -17,17 +17,7 @@ namespace C971_Tracker{
         public MainPage()
         {
             InitializeComponent();
-            //use below to drop a table that is giving key errors until ironed out.
-           /* using (SQLiteConnection connection = new SQLiteConnection(App.FilePath))
-            {
-                connection.DropTable<Course>();
-               
-            }*/
-
-            /*currentTermIndex = termsListView.SelectedItem.ToString();*/
-            /*currentTermIndex = termsListView.SelectedItem;*/
-        }
-
+           
         private void addTermBTN_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new addTerm());
