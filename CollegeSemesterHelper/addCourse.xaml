@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971_Tracker.addCourse">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Frame BackgroundColor="#2196F3" Padding="5,0,5,5" CornerRadius="0">
+                    <Label Text="ADD COURSE" HorizontalTextAlignment="Center" TextColor="White" FontSize="28"/>
+                </Frame>
+                <Label Text="Course Name" Padding="10,1,10,1"/>
+                <Entry x:Name="addCourseNameEntry" 
+                    Placeholder="Name your course here..."/>
+                <Label Text="Start Date" Padding="10,1,10,1"/>
+                <DatePicker
+                    x:Name="courseStartDate"/>
+                <Label Text="End Date" Padding="10,1,10,1"/>
+                <DatePicker 
+                    x:Name="courseEndDate"/>
+                <Picker Title="Select Status"
+                        x:Name="courseStatusPicker">
+                    <Picker.Items>
+                        <x:String>Plan To Take</x:String>
+                        <x:String>In Progress</x:String>
+                        <x:String>Completed</x:String>
+                        <x:String>Dropped</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Label Text="Instructor's Name" Padding=" 10,1,10,1"/>
+                <Entry x:Name="addCourseInstructorNameEntry" 
+                    Placeholder="Instructor's name..."/>
+                <Label Text="Instructor's Phone" Padding=" 10,1,10,1"/>
+                <Entry x:Name="addCourseInstructorPhoneEntry" 
+                    Placeholder="Instructor's phone number..."/>
+                <Label Text="Instructor's Email" Padding=" 10,1,10,1"/>
+                <Entry x:Name="addCourseInstructorEmailEntry" 
+                    Placeholder="Instructor's email here..."/>
+                <Label Text="Optional Notes" Padding=" 10,1,10,1"/>
+                <Entry x:Name="addCourseOptionalNotesEntry" 
+                    Placeholder="Enter optional notes here..."/>
+
+
+                <!-- BTNS -->
+                <Grid Margin="5,75,5,10">
+                    <Button 
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="1"
+                Grid.RowSpan="1"                
+                Text="SAVE"
+                x:Name="addCourseSaveBTN"
+                Clicked="addCourseSaveBTN_Clicked"
+                FontSize="12" Margin="30,0,15,0"
+                />
+
+                    <Button
+                Grid.Row="0"
+                Grid.Column="1"
+                Grid.ColumnSpan="1"
+                Grid.RowSpan="1" 
+                Text="CANCEL"
+                x:Name="addCourseCancelBTN"
+                Clicked="addCourseCancelBTN_Clicked"
+                FontSize="12" Margin="15,0,30,0" 
+                />
+
+                </Grid>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

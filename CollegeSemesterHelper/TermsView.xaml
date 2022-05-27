@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971_Tracker.TermsView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="5" CornerRadius="0">
+                <Label x:Name="termViewLabel" Text="" HorizontalTextAlignment="Center" TextColor="White" FontSize="28"/>
+            </Frame>
+            <Label Text="Term Details:" FontSize="20" FontAttributes="Italic" Padding="5" HorizontalOptions="Center"/>
+            <Grid Margin="5,-38,5,5">
+                
+                <!--Start Date-->
+                <Label Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.RowSpan="12"
+                    Grid.ColumnSpan="1"                     
+                    FontSize="20" 
+                    Text="Starts:"
+                    FontAttributes="Italic" 
+                    Padding="30,30,5,5" 
+                    HorizontalOptions="StartAndExpand"
+                    
+                />
+                <Label Grid.Row="1"
+                    Grid.Column="1"
+                    Grid.RowSpan="12"
+                    Grid.ColumnSpan="3" 
+                    Text="testing to see how much"                    
+                    x:Name="termStartLabel"
+                    FontSize="20" 
+                    FontAttributes="Italic" 
+                    Padding="5,30,20,5" 
+                    HorizontalOptions="StartAndExpand"
+                />
+                <!--End Date-->
+                <Label Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.RowSpan="40"
+                    Grid.ColumnSpan="1" 
+                    Text="Ends:" 
+                    FontSize="20" 
+                    FontAttributes="Italic" 
+                    Padding="30,55,5,5" 
+                    HorizontalOptions="StartAndExpand"
+                />
+                <Label Grid.Row="2"
+                    Grid.Column="1"
+                    Grid.RowSpan="40"
+                    Grid.ColumnSpan="3" 
+                    Text="testing to see how much"
+                    x:Name="termEndLabel"
+                    FontSize="20" 
+                    FontAttributes="Italic" 
+                    Padding="5,55,20,5" 
+                    HorizontalOptions="StartAndExpand"
+                />
+            </Grid>
+            <!--Term BTNS-->
+            <Grid Margin="20,-155,20,5" HorizontalOptions="Center">
+                <Button Grid.Row="0"
+                    Grid.Column="1"
+                    Grid.RowSpan="12"
+                    Grid.ColumnSpan="1"
+                    Text="Delete Term"
+                    x:Name="deleteTermBTN"
+                    Clicked="deleteTermBTN_Clicked"
+                    FontSize="12" Margin="7.5,5,20,5"                
+                />
+                <Button Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.RowSpan="12"
+                    Grid.ColumnSpan="1"
+                    Text="Edit Term"
+                    x:Name="editTermBTN"
+                    Clicked="editTermBTN_Clicked"
+                    FontSize="12" Margin="7.5,5,20,5"                
+                />
+            </Grid>
+            
+            <Label Text="Current Courses:" FontSize="20" FontAttributes="Italic" Padding="5" HorizontalOptions="Center"/>
+            <!-- Course List View -->
+            <ListView x:Name="courseListView" ItemSelected="courseListView_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell 
+                        Text="{Binding courseName}"
+                        Detail="{Binding courseStart}"                      
+                        TextColor="Black" 
+                        DetailColor="Gray"                                          
+                        />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            <!-- ADD Course BTN-->
+                <Button Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.RowSpan="12"
+                    Grid.ColumnSpan="1"
+                    Text="ADD COURSE"
+                    x:Name="addCourseBTN"
+                    Clicked="addCourseBTN_Clicked"
+                    FontSize="12" Margin="50,5,50,20"                
+                />
+            
+            
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

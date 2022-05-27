@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971_Tracker.CoursesView">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Frame BackgroundColor="#2196F3" Padding="5" CornerRadius="0">
+                    <Label x:Name="coursesViewLabel" Text="courses" HorizontalTextAlignment="Center" TextColor="White" FontSize="28"/>
+                </Frame>
+                <Label Text="Course Details:" FontSize="20" FontAttributes="Italic" Padding="5" HorizontalOptions="Center"/>
+                <Grid Margin="5,-38,5,5">
+
+                    <!--Start Date-->
+                    <Label Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.RowSpan="12"
+                    Grid.ColumnSpan="1"                     
+                    FontSize="20" 
+                    Text="Starts:"
+                    FontAttributes="Italic" 
+                    Padding="30,30,5,5" 
+                    HorizontalOptions="StartAndExpand"
+                    
+                />
+                    <Label Grid.Row="1"
+                    Grid.Column="1"
+                    Grid.RowSpan="12"
+                    Grid.ColumnSpan="3" 
+                    Text="testing to see how much"                    
+                    x:Name="courseStartLabel"
+                    FontSize="20" 
+                    FontAttributes="Italic" 
+                    Padding="5,30,20,5" 
+                    HorizontalOptions="StartAndExpand"
+                />
+                    <!--End Date-->
+                    <Label Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.RowSpan="40"
+                    Grid.ColumnSpan="1" 
+                    Text="Ends:" 
+                    FontSize="20" 
+                    FontAttributes="Italic" 
+                    Padding="30,55,5,5" 
+                    HorizontalOptions="StartAndExpand"
+                />
+                    <Label Grid.Row="2"
+                    Grid.Column="1"
+                    Grid.RowSpan="40"
+                    Grid.ColumnSpan="3" 
+                    Text="testing to see how much"
+                    x:Name="courseEndLabel"
+                    FontSize="20" 
+                    FontAttributes="Italic" 
+                    Padding="5,55,20,5" 
+                    HorizontalOptions="StartAndExpand"
+                />
+                </Grid>
+                <!--Term BTNS-->
+                <Grid Margin="20,-155,20,5" HorizontalOptions="Center">
+                    <Button Grid.Row="0"
+                    Grid.Column="1"
+                    Grid.RowSpan="12"
+                    Grid.ColumnSpan="1"
+                    Text="Delete Course"
+                    x:Name="deleteCourseBTN"
+                    Clicked="deleteCourseBTN_Clicked"
+                    FontSize="12" Margin="7.5,5,20,5"                
+                />
+                    <Button Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.RowSpan="12"
+                    Grid.ColumnSpan="1"
+                    Text="Edit Course"
+                    x:Name="editCourseBTN"
+                    Clicked="editCourseBTN_Clicked"
+                    FontSize="12" Margin="7.5,5,20,5"                
+                />
+                </Grid>
+
+                <Label Text="Current Assessments:" FontSize="20" FontAttributes="Italic" Padding="5" HorizontalOptions="Center"/>
+                <!-- Course List View -->
+                <ListView x:Name="assessmentListView" ItemSelected="assessmentListView_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell 
+                        Text="{Binding assessmentName}"
+                        Detail="{Binding assessmentStart}"                      
+                        TextColor="Black" 
+                        DetailColor="Gray"                                          
+                        />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <!-- ADD Course BTN-->
+                <Button Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.RowSpan="12"
+                    Grid.ColumnSpan="1"
+                    Text="ADD ASSESSMENT"
+                    x:Name="addAssessmentBTN"
+                    Clicked="addAssessmentBTN_Clicked"
+                    FontSize="12" Margin="50,5,50,20"                
+                />
+
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

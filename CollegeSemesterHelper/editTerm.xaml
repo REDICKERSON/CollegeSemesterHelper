@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971_Tracker.editTerm">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="5" CornerRadius="0">
+                <Label Text="EDIT TERM" HorizontalTextAlignment="Center" TextColor="White" FontSize="28"/>
+            </Frame>
+            
+            <Label Text="Term Name" Margin="10,1,10,1"/>
+            <Entry x:Name="editTermNameEntry"/>
+            
+            <Label Text="Start Date" Margin="10,1,10,1"/>
+            <DatePicker 
+                    x:Name="editTermStartDate"/>
+            
+            <Label Text="End Date" Margin="10,1,10,1"/>
+            <DatePicker 
+                    x:Name="editTermEndDate"/>
+
+            <!-- BTNS -->
+            <Grid Margin="5,30,5,5">
+                
+                <Button 
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="1"
+                Grid.RowSpan="1"
+                Text="SAVE"
+                x:Name="editTermSaveBTN"
+                Clicked="editTermSaveBTN_Clicked"
+                FontSize="12" Margin="30,0,15,0"  />
+
+                <Button 
+                Grid.Row="0"
+                Grid.Column="1"
+                Grid.ColumnSpan="1"
+                Grid.RowSpan="1"
+                Text="CANCEL"
+                x:Name="editTermCancelBTN"
+                Clicked="editTermCancelBTN_Clicked"
+                FontSize="12" Margin="15,0,30,0"  />
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

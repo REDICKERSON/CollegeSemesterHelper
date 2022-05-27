@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971_Tracker.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="WGU Term Tracker" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Label Text="Current Terms" FontSize="20" FontAttributes="Italic" Padding="15,5,30,5" HorizontalOptions="Center"/>
+
+        <ListView x:Name="termsListView" ItemSelected="termsListView_ItemSelected">
+                    
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell 
+                        Text="{Binding termName}"
+                        Detail="{Binding termStart}"                      
+                        TextColor="Black" 
+                        DetailColor="Gray"                       
+                        
+                    />
+                </DataTemplate>
+            </ListView.ItemTemplate>    
+        </ListView>
+        <Grid>
+            <Button Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.RowSpan="12"
+                    Grid.ColumnSpan="1"
+                    Text="ADD TERM"
+                    x:Name="addTermBTN"
+                    Clicked="addTermBTN_Clicked"
+                    FontSize="12" Margin="20,5,7.5,5"                
+            />
+            <Button Grid.Row="0"
+                    Grid.Column="1"
+                    Grid.RowSpan="12"
+                    Grid.ColumnSpan="1"
+                    Text="Delete Term"
+                    x:Name="deleteTermBTN"
+                    Clicked="deleteTermBTN_Clicked"
+                    FontSize="12" Margin="7.5,5,20,5"                
+            />
+        </Grid>
+        <Label Text="This is a test to see if the HOTreload is working or not" FontSize="16" Padding="30,0,30,0"/>
+        
+    </StackLayout>
+
+</ContentPage>
