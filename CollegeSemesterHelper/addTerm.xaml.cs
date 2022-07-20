@@ -18,11 +18,6 @@ namespace C971_Tracker
             InitializeComponent();
         }
 
-        /*private void saveBTN_Clicked(object sender, EventArgs e)
-        {
-
-        }*/
-
         private void addTermSaveBTN_Clicked(object sender, EventArgs e)
         {
             Term term = new Term()
